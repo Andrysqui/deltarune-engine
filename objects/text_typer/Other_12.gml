@@ -72,7 +72,7 @@ switch(cmd[|0]){
 		
 	case "voice":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]>=0&&cmd[|1]<array_height_2d(_group_voice)){
+			if(cmd[|1]>=0&&cmd[|1]<array_length(_group_voice)){
 				_voice=cmd[|1];
 			}
 		}
@@ -80,7 +80,7 @@ switch(cmd[|0]){
 		
 	case "font":
 		if(is_real(cmd[|1])){
-			if(cmd[|1]>=0&&cmd[|1]<array_height_2d(_group_font)){
+			if(cmd[|1]>=0&&cmd[|1]<array_length(_group_font)){
 				_font=cmd[|1];
 			}
 		}
@@ -93,13 +93,13 @@ switch(cmd[|0]){
 			}
 			if(sprite_exists(cmd[|1])){
 				var INST=instance_create_depth(_char_x,_char_y,0,text_single);
-				INST.sprite=cmd[|1];
-				INST.sprite_image=cmd[|2];
-				INST.scale_x=_scale_x;
-				INST.scale_x=_scale_y;
-				INST.angle=_angle;
-				INST.color=_color;
-				INST.alpha=_alpha;
+				INST.sprite_index=cmd[|1];
+				INST.image_index=cmd[|2];
+				INST.image_xscale=_scale_x;
+				INST.image_yscale=_scale_y;
+				INST.image_angle=_angle;
+				INST.image_blend=_color;
+				INST.image_alpha=_alpha;
 				INST.effect=_effect;
 				INST.gui=_gui;
 				INST.depth=_depth;
@@ -233,7 +233,7 @@ switch(cmd[|0]){
 					instance_destroy(_inst_face);
 					x-=116;
 				}
-			}else if(face<array_length_1d(_group_face)&&is_real(image)){
+			}else if(face<array_length(_group_face)&&is_real(image)){
 				if(instance_exists(_inst_face)){
 					if(_inst_face.object_index!=_group_face[face]){
 						instance_destroy(_inst_face);
@@ -295,7 +295,7 @@ switch(cmd[|0]){
 		break;
   case "record_action_target":
     var hero_data = ui.find_hero(ui.no_action_choice);
-    if (hero_data) {
+    if (hero_data != undefined) {
       hero_data.action_target = ds_map_find_value(_map_macro,"CHOICE");
     }
     ui.alarm[0] = 1;

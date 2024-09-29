@@ -121,7 +121,7 @@ else if (_phase==2) {
 }
 else if (_phase==3) {
 	randomize();
-	global.status=random_range(0, array_length_1d(_monster_text)+1);
+	global.status=random_range(0, array_length(_monster_text)+1);
 	if (!instance_exists(dialog)) {
 	var inst=instance_create_depth(global.monster.x-150,global.monster.y+40,0,dialog);
 		inst.text=_monster_text[global.status-1];

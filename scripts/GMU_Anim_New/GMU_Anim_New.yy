@@ -1,12 +1,13 @@
 {
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "GMU_Anim",
-    "path": "folders/Scripts/GMU_Anim.yy",
+  "$GMScript":"v1",
+  "%Name":"GMU_Anim_New",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GMU_Anim_New",
+  "parent":{
+    "name":"GMU_Anim",
+    "path":"folders/Scripts/GMU_Anim.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "GMU_Anim_New",
-  "tags": [],
-  "resourceType": "GMScript",
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

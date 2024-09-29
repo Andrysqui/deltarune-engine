@@ -1,12 +1,13 @@
 {
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "Macros",
-    "path": "folders/Scripts/Macros.yy",
+  "$GMScript":"v1",
+  "%Name":"Macro_Depth",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Macro_Depth",
+  "parent":{
+    "name":"Macros",
+    "path":"folders/Scripts/Macros.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "Macro_Depth",
-  "tags": [],
-  "resourceType": "GMScript",
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

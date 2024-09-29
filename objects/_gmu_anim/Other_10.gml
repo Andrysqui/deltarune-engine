@@ -3,6 +3,7 @@ var t=_time;
 var b=_start;
 var c=_change;
 var d=_duration;
+var s=0;
 
 switch(_tween){
 	case GMU_ANIM.LINEAR:
@@ -166,11 +167,7 @@ switch(_tween){
 		break;
 		
 	case GMU_ANIM.BACK:
-		if(_arg1>0){
-			var s=_arg1;
-		}else{
-			var s=1.70158;
-		}
+		s = (_arg1 > 0) ? _arg1 : 1.70158;
 		switch(_ease){
 			case GMU_ANIM.IN:
 				t/=d;
@@ -212,9 +209,9 @@ switch(_tween){
 				}
 				if(a==0||a<abs(c)){
 					a=c;
-					var s=p/4;
+					s=p/4;
 				}else{
-					var s=p/(2*pi)*arcsin(c/a);
+					s=p/(2*pi)*arcsin(c/a);
 				}
 				t-=1;
 				r=-(a*power(2,10*t)* sin((t*d-s)*(2*pi)/p))+b;
@@ -234,9 +231,9 @@ switch(_tween){
 				}
 				if(a==0||a<abs(c)){
 					a=c;
-					var s=p/4;
+					s=p/4;
 				}else{
-					var s=p/(2*pi)*arcsin(c/a);
+					s=p/(2*pi)*arcsin(c/a);
 				}
 				r=a*power(2,-10*t)*sin((t*d-s)*(2*pi)/p)+c+b;
 				break;
@@ -255,9 +252,9 @@ switch(_tween){
 				}
 				if(a==0||a<abs(c)){
 					a=c;
-					var s=p/4;
+					s=p/4;
 				}else{
-					var s=p/(2*pi)*arcsin(c/a);
+					s=p/(2*pi)*arcsin(c/a);
 				}
 				t-=1;
 				if(t<1){

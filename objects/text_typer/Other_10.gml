@@ -17,29 +17,27 @@ if(_char!=" "){
 	var INST=instance_create_depth(_char_x,_char_y+OFFSET,0,text_single);
 	INST.text=_char;
 	INST.font=font;
-	INST.scale_x=_scale_x;
-	INST.scale_y=_scale_y;
-	INST.angle=_angle;
+	INST.image_xscale=_scale_x;
+	INST.image_yscale=_scale_y;
+	INST.image_angle=_angle;
 	INST.shadow=_shadow;
-	INST.color[0]=_color[0];
-	INST.color[1]=_color[1];
-	INST.color[2]=_color[2];
-	INST.color[3]=_color[3];
+	INST.color=_color;
 	INST.color_shadow=_color_shadow;
-	INST.alpha=_alpha;
+	INST.image_alpha=_alpha;
 	INST.effect=_effect;
 	INST.gui=_gui;
 	INST.depth=_depth;
 	ds_list_add(_list_inst,INST);
 	
-	if(!_voice_played&&!_skipping&&!_instant){
-		var sound=_group_voice[_voice,irandom(array_length_2d(_group_voice,_voice)-1)];
-		if(audio_exists(sound)){
-			audio_stop_sound(sound);
-			audio_play_sound(sound,0,false);
-			_voice_played=true;
-		}
-	}
+    if (!_voice_played&&!_skipping&&!_instant) {
+        var voice_count=array_length(_group_voice[_voice]);
+        var sound=_group_voice[_voice][irandom(voice_count - 1)];
+        if (audio_exists(sound)) {
+            audio_stop_sound(sound);
+            audio_play_sound(sound, 0, false);
+            _voice_played = true;
+        }
+    }
 }
 
 draw_set_font(font);

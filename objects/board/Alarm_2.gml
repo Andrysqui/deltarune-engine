@@ -1,2 +1,2 @@
-inst=soul;
+var inst=soul;
 instance_destroy(inst);
